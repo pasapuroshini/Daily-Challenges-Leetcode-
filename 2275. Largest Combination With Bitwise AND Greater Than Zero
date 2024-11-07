@@ -1,0 +1,24 @@
+
+```
+class Solution {
+    public int largestCombination(int[] candidates) {
+        int maxcount=0;
+        for( int bit=0;bit<32;bit++)
+        {
+            int count=0;
+            for ( int no :candidates)
+            {
+                if( (no & (1<<bit))!=0)
+                {
+                    count++;
+                }
+            }
+
+            maxcount= Math.max(count,maxcount);
+        }
+
+        return maxcount;
+    }
+}
+```
+To know about implementation view : https://leetcode.com/problems/largest-combination-with-bitwise-and-greater-than-zero/solutions/6019348/easy-and-simple-solution-beats-100-java
